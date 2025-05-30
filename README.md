@@ -1,6 +1,6 @@
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Requirements](#Requirements)
+2. [Requirements](#requirements)
 3. [Features](#features)
 4. [Usage](#usage)
 
@@ -10,7 +10,7 @@ This project provides a set of Python utilities designed to format, filter, and 
 ## 2. Requirements
 The code is written and contains widgets that are primarily designed for use in `Jupyter Notebook`. However, there is also an alternative, well-documented way to call the functions without the use of widgets, allowing execution in any other Python environment.
 The required libraries are: `time`, `numpy`, `pandas`, `re`, `logging`, `os`, `copy`
-Note, the display of the widgets may vary depending on the `Jupyter Notebook` version and settings.
+**Note:** the display of the widgets may vary depending on the `Jupyter Notebook` version and settings.
 
 ## 3. Features
 ### File Path Function (`file_path`)
@@ -20,7 +20,7 @@ Note, the display of the widgets may vary depending on the `Jupyter Notebook` ve
 * **Supported File Formats**: Supports `.xlsx`, `.txt`, and `.csv` files.
 * **Logging**: Includes a comprehensive logging feature to provide detailed information about the function's execution and any warnings or errors.
 * **Error Handling**: Comprehensive error handling for incorrect inputs (e.g., invalid paths, not found files, etc.).
-* **Cross-Platform Path Compatibility**: Automatically adjusts the correct path separator (`/` for Linux/macOS, `\` for Windows) using os.sep, ensuring compatibility across different operating systems.
+* **Cross-Platform Path Compatibility**: Automatically adjusts the correct path separator (`/` for Linux/macOS, `\` for Windows) using `os.sep`, ensuring compatibility across different operating systems.
 * **Input Filtration**: Filters out unsupported symbols such as `/\:*?"<>|` from the file names.
 * **List Unpacking**: Contains features for unpacking nested lists and tuples in the input variables.
 
@@ -44,7 +44,8 @@ The `file_path` function can be called directly in any Python environment. It of
    * Example: `filename = ['filename1', 'filename2']`
    * Alternatively, use `filename = ['load all']` to find all files with the specified postfix within the given path.
 * `postfix`: A list containing a single string representing the file extension (e.g., `['xlsx']`, `['txt']`, `['csv']`).
-* `log`: A boolean value (True or False) to enable or disable detailed logging of the function's execution.
+* `log`: A boolean value (True or False) to enable or disable detailed logging of the function's execution.<br>
+<br>For more detailed guide about the function, call `help(file_path)`.
 
 ### Function Execution Examples:
 `path = r'C:\Users\username\Desktop\Python_Project'`<br>
@@ -61,29 +62,25 @@ The `file_path` function can be called directly in any Python environment. It of
 
 ### 4.2 Using the `file_path_widgets` function (Preffered variation, Jupyter Notebook only)
 The `file_path_widgets` function provides an interactive graphical user interface (GUI) within `Jupyter Notebook` for easier and faster input definition and execution of the `file_path` function. Call `file_path_widgets()` to run the GUI. Upon execution, the following set of interactive widgets will appear.<br>
+
 ![Widget image01](test_files\Widget_GUI_Example_1.png "Widget image")
 
-`Path` text box: Enter the directory path where the files you wanna load are located.
-   * Example input: `C:\Users\Folder1\Folder2`
+* `Path` text box: Enter the directory path where the files you want to load are located.<br>
+   * Example input: `C:\Users\Folder1\Folder2`<br>
+* `Filename Option`: Select either `load all` (to find all files with the specified `postfix`) or `manual` (to specify individual file names). If `manual` is selected, the `Number of Files` spinner will become active, allowing you to dynamically add `Filename` input fields.
+   * `Filename`: Enter the names of your files in the provided text boxes (e.g., `name_of_file1`)<br>
+* `Postfix`: Select the file extension from the dropdown menu (`xlsx`, `txt`, `csv`).<br>
+* `Log`: Choose `on` or `off` to enable or disable logging and function feedback.<br>
+* `Update Values` button: Click the button after the definition of the aforementioned inputs. This action transfers your widget inputs to the internal variables that the `file_path` function will use. The assigned values will be displayed in the **"ASSIGNED VALUES"** section.<br>
+* `Result Storage Name`: Enter the name of the Python variable where the list of generated file paths will be stored (e.g. `my_files`).<br>
+* `Function Run Button`: Click this button to execute the `file_path` function with the specified inputs. The output, including any logs, warnings, or errors, will appear in the **"OUTPUT"** window below the widgets.<br>
+* **Note:** Ensure all input fields are defined and the **"Update Values"** button is clicked before running the function. The display and behavior of widgets may vary slightly based on your `Jupyter Notebook` environment configuration.<br>
 
-`Filename Option`: Select either `load all` (to find all files with the specified `postfix`) or `manual` (to specify individual file names). If `manual` is selected, the `Number of Files` spinner will become active, allowing you to dynamically add `Filename` input fields.
-   * `Filename`: Enter the names of your files in the provided text boxes (e.g., `name_of_file1`)
+### Widget function examples:
 
-`Postfix`: Select the file extension from the dropdown menu (`xlsx`, `txt`, `csv`).
+![Widget image02](test_files\Widget_GUI_Example_1.png "Widget image")
 
-`Log`: Choose `on` or `off` to enable or disable logging and function feedback.
-
-`Update Values` button: Click the button after the definition of the aforementioned inputs. This action transfers your widget inputs to the internal variables that the `file_path` function will use. The assigned values will be displayed in the "ASSIGNED VALUES" section.
-
-`Result Storage Name`: Enter the name of the Python variable where the list of generated file path will be stored (e.g. `my_files`).
-
-`Function Run Button`: Click this button to execute the `file_path` function with your specified inputs. The output, including any logs, warnings, or errors, will appear in the "OUTPUT" window below the widgets.
-
-Note: Ensure all input fields are defined and the "Update Values" button is clicked before running the function. The display and behavior of widgets may vary slightly based on your `Jupyter Notebook` environment configuration.
-
-
-
-
+![Widget image03](test_files\Widget_GUI_Example_1.png "Widget image")
 
 
 
