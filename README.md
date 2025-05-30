@@ -1,17 +1,40 @@
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Installation](#installation)
+2. [Requirements](#Requirements)
 3. [Features](#features)
 4. [Usage](#usage)
 
 ## 1. Project Overview
-This project provides a set of Python utilities designed to format, filter, and simplify the creation of file paths and the data loading process. It includes a robust function for generating a formated list of absolute file paths with many features, like searching for all files with a specified format in folders. It then stores the results in a variable which can be dirrectly passed into a pandas.read function. It suppports .xlsx, .txt as well as .csv formats. It also includes a GUI wrapper which significantly simplifies and further speeds up the file path creation process. The function returns a detailed log which allows the user to quickly check and spot any potential misstakes. Additionally another compatible function using the pandas library to load the content of the stored variables is currently in progress and can be located in the package directory together with all the other functions.
+This project provides a set of Python utilities designed to format, filter, and simplify the creation of file paths and the data loading process. It includes a robust function for generating a formated list of absolute file paths with many features, like searching for all files with a specified format in folders. It then stores the results in a variable which can be dirrectly passed into a pandas.read function. It suppports `.xlsx`, `.txt` as well as `.csv` formats. It also includes a GUI wrapper which significantly simplifies and further speeds up the file path creation process. The function returns a detailed log which allows the user to quickly check and spot any potential misstakes. Additionally another compatible function using the pandas library to load the content of the stored variables is currently in progress and can be located in the package directory together with all the other functions.
 
-## 2. Installation and Modules
+## 2. Requirements
 The code is written and contains widgets that are primarily designed for use in `Jupyter Notebook`. However, there is also an alternative, well-documented way to call the functions without the use of widgets, allowing execution in any other Python environment.
 The required libraries are: `time`, `numpy`, `pandas`, `re`, `logging`, `os`, `copy`
+Note, the display of the widgets may vary depending on the Jupyter Notebook version and settings.
 
 ## 3. Features
+### File Path Function (`file_path`)
+* **Absolute Path Creation**: Constructs absolute paths to data files based on specified folder paths, filenames, and file formats.
+* **Flexible Filename Handling**: Supports searching for specific files or loading all files of a given format within a directory.
+    * Example: `filename = ['N04', 'N05']` or `filename = ['load all']`.
+* **Supported File Formats**: Currently supports `.xlsx`, `.txt`, and `.csv` files. The list of supported formats can be extended.
+* **Logging**: Includes a logging feature to provide detailed information about the function's execution and any warnings or errors.
+* **Error Handling**: Comprehensive error handling for incorrect inputs (e.g., invalid paths, unsupported file formats).
+* **Case Insensitivity (Windows)**: Case-insensitive file searching on Windows systems.
+* **Input Filtration**: Filters out empty spaces and unsupported symbols from inputs.
+
+
+
+
+
+
+
+
+
+
+
+### File Path Widgets (`file_path_widgets`)
+
 
 ## 4. Usage
 
