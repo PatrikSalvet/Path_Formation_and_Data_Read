@@ -1,8 +1,8 @@
 ## Table of Contents
-1. [Project Overview](#Project-Overview)
-2. [Requirements](#Requirements)
-3. [Features](#Features)
-4. [Usage](#Usage)
+1. [Project Overview](#project-overview)
+2. [Requirements](#requirements)
+3. [Features](#features)
+4. [Usage](#usage)
 
 ## 1. Project Overview
 This project provides a set of Python utilities designed to format, filter, and simplify the creation of file paths and the data loading process. It includes a robust function for generating a formated list of absolute file paths with many features, like searching for all files with a specified format in folders. It then stores the results in a variable which can be dirrectly passed into a `pandas.read` function. It suppports `.xlsx`, `.txt` as well as `.csv` formats. It also includes a GUI wrapper which significantly simplifies and further speeds up the file path creation process. The function returns a detailed log which allows the user to quickly check and spot any potential mistakes. Additionally another compatible function using the pandas library to load the content of the stored variables is currently in progress and can be located in the package directory together with all the other functions.
@@ -63,7 +63,7 @@ The `file_path` function can be called directly in any Python environment. It of
 ### 4.2 Using the `file_path_widgets` function (Preffered variation, Jupyter Notebook only)
 The `file_path_widgets` function provides an interactive graphical user interface (GUI) within `Jupyter Notebook` for easier and faster input definition and execution of the `file_path` function. Call `file_path_widgets()` to run the GUI. Upon execution, the following set of interactive widgets will appear.<br>
 
-![Widget image01](test_files/Widget_GUI_Example_1.png "Widget image")
+![Widget image01](test_files/Images_Readme/Widget_GUI_Example_1.png "Widget image")
 * `Path` text box: Enter the directory path where the files you want to load are located.<br>
    * Example input: `C:\Users\Folder1\Folder2`<br>
 * `Filename Option`: Select either `load all` (to find all files with the specified `postfix`) or `manual` (to specify individual file names). If `manual` is selected, the `Number of Files` spinner will become active, allowing you to dynamically add `Filename` input fields.
@@ -77,8 +77,8 @@ The `file_path_widgets` function provides an interactive graphical user interfac
 For more detailed guide about the function, call `help(file_path_widgets)`.
 
 ### Widget function example 2:
-![Widget image02](test_files/Widget_GUI_Example_2.png "Widget result image 1")
+![Widget image02](test_files/Images_Readme/Widget_GUI_Example_2.png "Widget result image 1")
 
 ### Widget function example 3:
-![Widget image03](test_files/Widget_GUI_Example_3.png "Widget result image 2")
+![Widget image03](test_files/Images_Readme/Widget_GUI_Example_3.png "Widget result image 2")
 The outputs are stored in the variable specified in the **Result Storage Name** (`my_files`) in this case. This list serves as an input to pandas.read function.
